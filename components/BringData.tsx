@@ -31,17 +31,17 @@ export const BringData = () => {
   }
 
     return (
-        <div>
-            <div>Casos :{data.cases}</div>
-            <div>Ativos : {data.active}</div>
-            <div>Países afetados : {data.affectedCountries}</div>
-            <div>Situação Crítica: {data.critical}</div>
-            <div>Mortes: {data.deaths}</div>
-            <div>População Total: {data.population}</div>
-            <div>Recuperados: {data.recovered}</div>
-            <div>Casos Hoje: {data.todayCases}</div>
-            <div>Mortes Hoje: {data.todayDeaths}</div>
-            <div>Recuperados Hoje: {data.todayRecovered}</div>
+        <div className="mainContainer">
+            <div className="cases">Casos :{data.cases}</div>
+            <div className="active">Ativos : {data.active}</div>
+            <div className="affectedCountries">Países afetados : {data.affectedCountries}</div>
+            <div className="critical">Situação Crítica: {data.critical}</div>
+            <div className="deaths">Mortes: {data.deaths}</div>
+            <div className="population">População Total: {data.population}</div>
+            <div className="recovered">Recuperados: {data.recovered}</div>
+            <div className="todayCases">Casos Hoje: {data.todayCases}</div>
+            <div className="todayDeaths">Mortes Hoje: {data.todayDeaths}</div>
+            <div className="todayRecovered">Recuperados Hoje: {data.todayRecovered}</div>
         </div>
     )
 }
