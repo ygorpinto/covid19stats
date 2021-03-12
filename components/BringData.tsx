@@ -17,10 +17,11 @@ todayRecovered: number;
 
 export const BringData = () => {
    
-    const [data,setData] = useState({} as DataDefault);
+  const [data,setData] = useState({} as DataDefault);
 
   useEffect(()=>{
     BringallData();
+    Notification.requestPermission();
   },[])
 
   const BringallData = async () => {
@@ -28,6 +29,13 @@ export const BringData = () => {
     const data = await res.data;
     setData(data);
   }
+
+  setTimeout(()=>{
+    if (Notification.permission === 'granted' && data.todayDeaths > 2500) {
+      new Notification(`Hoje já houveram ${data.todayDeaths} mortes.`)
+    }
+  },60000)
+  
 
     return (
         <BringDataStyles>

@@ -49,6 +49,11 @@ h3 {
     
     box-shadow:0.1rem 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.4);
 
+        :hover{
+            background-color: #4953b8;
+            color: #fff;
+        }
+
     p {
         font-size:1.8rem;
         font-weight:600;
