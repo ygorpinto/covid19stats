@@ -24,18 +24,20 @@ export const BringData = () => {
     Notification.requestPermission();
   },[])
 
+  useEffect(()=>{
+    setTimeout(()=>{
+      if (Notification.permission === 'granted' && data.todayDeaths > 2500) {
+        new Audio('/pristine-609.mp3').play();
+        new Notification(`Hoje já houveram ${data.todayDeaths} mortes.`)
+      }
+    },60000)
+  })
+
   const BringallData = async () => {
     const res = await axios.get("https://disease.sh/v3/covid-19/all");
     const data = await res.data;
     setData(data);
   }
-
-  setTimeout(()=>{
-    if (Notification.permission === 'granted' && data.todayDeaths > 2500) {
-      new Notification(`Hoje já houveram ${data.todayDeaths} mortes.`)
-    }
-  },60000)
-  
 
     return (
         <BringDataStyles>
